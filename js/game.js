@@ -43,10 +43,14 @@ class Game{
                 index++;
                 x = x + 250
                 y=displayHeight-allPlayers[plr].distance
+                fill("white");
+                textSize(15);
+                text(allPlayers[plr].name,x,y-50)
                 cars[index-1].x=x
                 cars[index-1].y=y
                 if(index === player.index){
-                    cars[index-1].shapeColor="red"
+                    fill("red");
+                    ellipse(x,y,70,70);
                     camera.position.x=displayWidth/2;
                     camera.position.y=cars[index-1].y
                 }

@@ -3,6 +3,7 @@ class Form{
       this.inputname = createInput("name");
       this.button = createButton("play");
       this.greeting = createElement("h2");
+      this.reset = createButton("reset");
     }
     hide(){
       this.inputname.hide();
@@ -15,6 +16,12 @@ class Form{
       title.position(displayWidth/2-50,10);
       this.inputname.position(displayWidth/2-20,displayHeight/2-80);
       this.button.position(displayWidth/2-20,displayHeight/2-30);
+      this.reset.position(displayWidth-100,50);
+      this.reset.mousePressed(()=>{
+        game.updateGameState(0);
+        player.updatePlayerCount(0);
+        location.reload();
+      });
       this.button.mousePressed(()=>{
         this.inputname.hide();
         this.button.hide();
