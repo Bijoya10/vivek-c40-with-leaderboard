@@ -20,6 +20,7 @@ class Form{
       this.reset.mousePressed(()=>{
         game.updateGameState(0);
         player.updatePlayerCount(0);
+        Player.updateCarsAtEnd(0);
         location.reload();
       });
       this.button.mousePressed(()=>{
