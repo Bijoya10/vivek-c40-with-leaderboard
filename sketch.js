@@ -27,7 +27,7 @@ function draw(){
         game.play()
     }
     if(gameState === 2){
-        clear();
+       clear()
         game.end()
     }
 }

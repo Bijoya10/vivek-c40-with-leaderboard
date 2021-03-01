@@ -3,7 +3,7 @@ class Player{
         this.name=null
         this.distance = 0
         this.index = null
-        this.rank = null
+        this.rank = "not completed yet"
     }
     getPlayerCount(){
       db.ref("playerCount").on("value",function(data){
@@ -19,7 +19,8 @@ class Player{
         var playerIndex ="players/player"+ this.index;
          db.ref(playerIndex).update({
              name:this.name,
-             distance:this.distance,rank:this.rank
+             distance:this.distance,
+             rank:this.rank
          })
     }
     static getPlayerInfo(){

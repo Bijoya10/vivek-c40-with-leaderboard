@@ -37,7 +37,7 @@ class Game{
         Player.getPlayerInfo();
         player.getCarsAtEnd();
         if(allPlayers !== undefined){
-            background("white");
+            background("black");
             image(trackImg,0,-displayHeight*4,displayWidth,displayHeight*5)
             var index = 0, x = 180, y
             for(var plr in allPlayers){
@@ -49,6 +49,7 @@ class Game{
                 text(allPlayers[plr].name,x,y-50)
                 cars[index-1].x=x
                 cars[index-1].y=y
+                console.log(cars[index-1].y)
                 if(index === player.index){
                     fill("red");
                     ellipse(x,y,70,70);
@@ -74,11 +75,13 @@ class Game{
         console.log(player.rank)
         Player.getPlayerInfo()
         var x = 120
-        y = 50
+        var y = -3500
+        
         for(var plr in allPlayers){
             y=y + 50
-            fill("white");
-            textSize(15);
+            fill("black");
+            textSize(30);
+            console.log(allPlayers[plr].name)
             text(allPlayers[plr].name+" : "+allPlayers[plr].rank,x,y)
         }
     }  
